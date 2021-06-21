@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "62889405057",
+    "project_id": "new-cheatcodes-a0109",
+    "storage_bucket": "new-cheatcodes-a0109.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:62889405057:android:3f08dec9a97b5669bdfb80",
+        "android_client_info": {
+          "package_name": "com.cheatart.newcheatcodes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "62889405057-iffe5ccri5g4mhslsaadbg74c5pf2n4p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cheatart.newcheatcodes",
+            "certificate_hash": "89251964a7401e3de257cd624f50c0311e4ae980"
+          }
+        },
+        {
+          "client_id": "62889405057-igqdb6jv3m33l1mcqkjkjgrlnjsu7so8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJIKId9f-I4bv9R--MDY1AcpKb0gVulE8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "62889405057-igqdb6jv3m33l1mcqkjkjgrlnjsu7so8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

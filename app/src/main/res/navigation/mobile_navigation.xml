@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.cheatart.newcheatcodes.ui.HomeFragment"
+        android:label="Cheat Codes"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_psFragment"
+            app:destination="@id/psFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_pcFragment"
+            app:destination="@id/pcFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_xboxFragment"
+            app:destination="@id/xboxFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_popularGamesFragment"
+            app:destination="@id/popularGamesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"  />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/pcFragment"
+        android:name="com.cheatart.newcheatcodes.ui.pc.PcFragment"
+        android:label="PC Cheats"
+        tools:layout="@layout/fragment_pc" >
+        <action
+            android:id="@+id/action_pcFragment_to_cheatDetailsFragment"
+            app:destination="@id/cheatDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/psFragment"
+        android:name="com.cheatart.newcheatcodes.ui.ps.PsFragment"
+        android:label="PS Cheats"
+        tools:layout="@layout/fragment_ps" >
+        <action
+            android:id="@+id/action_psFragment_to_cheatDetailsFragment"
+            app:destination="@id/cheatDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/xboxFragment"
+        android:name="com.cheatart.newcheatcodes.ui.xbox.XboxFragment"
+        android:label="Xbox Cheats"
+        tools:layout="@layout/fragment_xbox" >
+        <action
+            android:id="@+id/action_xboxFragment_to_cheatDetailsFragment"
+            app:destination="@id/cheatDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/cheatDetailsFragment"
+        android:name="com.cheatart.newcheatcodes.ui.CheatDetailsFragment"
+        android:label="{name}"
+        tools:layout="@layout/fragment_cheat_details" >
+        <argument
+            android:name="cheat"
+            app:argType="com.cheatart.newcheatcodes.model.CheatModel" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/popularGamesFragment"
+        android:name="com.cheatart.newcheatcodes.ui.popular.PopularGamesFragment"
+        android:label="Popular in 2020"
+        tools:layout="@layout/fragment_popular_games" >
+        <action
+            android:id="@+id/action_popularGamesFragment_to_popularGameDetailsFragment"
+            app:destination="@id/popularGameDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"  />
+    </fragment>
+    <fragment
+        android:id="@+id/popularGameDetailsFragment"
+        android:name="com.cheatart.newcheatcodes.ui.popular.PopularGameDetailsFragment"
+        android:label="{name}"
+        tools:layout="@layout/fragment_popular_game_details" >
+        <argument
+            android:name="game"
+            app:argType="com.cheatart.newcheatcodes.model.GameData" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.cheatart.newcheatcodes.ui.search.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_popularGameDetailsFragment"
+            app:destination="@id/popularGameDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"  />
+    </fragment>
+
+
+</navigation>

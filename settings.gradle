@@ -1,0 +1,3 @@
+rootProject.name = "Cheat Codes"
+include ':app'
+include ':nativetemplates'

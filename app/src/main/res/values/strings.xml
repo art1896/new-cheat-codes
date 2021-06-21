@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Cheat Codes</string>
+
+    <string name="store_steam">Steam</string>
+    <string name="store_ps">PlayStation Store</string>
+    <string name="store_xbox">Xbox Store</string>
+    <string name="store_app_store">App Store</string>
+    <string name="store_gog">GOG</string>
+    <string name="store_nintendo">Nintendo Store</string>
+    <string name="store_xbox360">Xbox 360 Store</string>
+    <string name="store_google_play">Google Play</string>
+    <string name="store_epic">Epic Games</string>
+    <string name="store_itch">itch.io</string>
+
+    <string name="pc">PC</string>
+    <string name="macos">macOS</string>
+    <string name="playstation">PlayStation</string>
+    <string name="android">Android</string>
+    <string name="linux">Linux</string>
+    <string name="games">Games</string>
+    <string name="ps">PS</string>
+    <string name="xbox">Xbox</string>
+    <string name="gameurl">https://api.rawg.io/api/games?page=1</string>
+    <string name="genres">Genres</string>
+    <string name="platforms">Platforms</string>
+    <string name="favorites">Favorites</string>
+    <string name="search">Search</string>
+    <string name="new_and_trending">New and trending</string>
+    <string name="home">Home</string>
+
+    <string-array name="order_by">
+        <item>Name</item>
+        <item>Released</item>
+        <item>Added</item>
+        <item>Created</item>
+        <item>Updated</item>
+        <item>Rating</item>
+        <item>Metacritic</item>
+    </string-array>
+</resources>
