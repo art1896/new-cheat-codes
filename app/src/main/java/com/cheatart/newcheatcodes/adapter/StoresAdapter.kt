@@ -9,11 +9,13 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.cheatart.newcheatcodes.databinding.StoreItemBinding
 import com.cheatart.newcheatcodes.model.GameData
+import com.cheatart.newcheatcodes.model.Store
+import com.cheatart.newcheatcodes.model.Stores
 
 class StoresAdapter(
     private val onStoreClickListener: OnStoresItemClickListener
 ) :
-    ListAdapter<GameData.Store, StoresAdapter.StoresViewHolder>(STORES_COMPARATOR),
+    ListAdapter<Stores, StoresAdapter.StoresViewHolder>(STORES_COMPARATOR),
     AdapterView.OnItemClickListener {
 
 
@@ -34,7 +36,7 @@ class StoresAdapter(
 
 
     interface OnStoresItemClickListener {
-        fun onStoreItemClick(store: GameData.Store?)
+        fun onStoreItemClick(store: Stores?)
     }
 
     inner class StoresViewHolder(private val binding: StoreItemBinding) :
@@ -51,10 +53,10 @@ class StoresAdapter(
         }
 
 
-        fun bind(store: GameData.Store) {
+        fun bind(store: Stores) {
             binding.apply {
-                storeImage.setImageResource(store.image!!)
-                storeName.text = store.name
+                storeImage.setImageResource(store.store?.image!!)
+                storeName.text = store.store.name
             }
         }
 
@@ -64,16 +66,16 @@ class StoresAdapter(
     }
 
     companion object {
-        private val STORES_COMPARATOR = object : DiffUtil.ItemCallback<GameData.Store>() {
+        private val STORES_COMPARATOR = object : DiffUtil.ItemCallback<Stores>() {
             override fun areItemsTheSame(
-                oldItem: GameData.Store,
-                newItem: GameData.Store
+                oldItem: Stores,
+                newItem: Stores
             ) =
-                oldItem.image == newItem.image
+                oldItem.store?.id == newItem.store?.id
 
             override fun areContentsTheSame(
-                oldItem: GameData.Store,
-                newItem: GameData.Store
+                oldItem: Stores,
+                newItem: Stores
             ) =
                 oldItem == newItem
 

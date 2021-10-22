@@ -1,6 +1,5 @@
 package com.cheatart.newcheatcodes.ui.search
 
-import android.util.Log
 import androidx.lifecycle.*
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
@@ -9,7 +8,6 @@ import com.cheatart.newcheatcodes.data.response.GenresResponse
 import com.cheatart.newcheatcodes.data.response.PlatformsResponse
 import com.cheatart.newcheatcodes.model.GameData
 import com.cheatart.newcheatcodes.model.QueryModel
-import dagger.assisted.Assisted
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -32,10 +30,10 @@ class SearchViewModel @Inject constructor(
     fun getGenres() = viewModelScope.launch {
         _genresResponse.value = repository.getGenres()
     }
-
-    private var _popularGamesResponse: LiveData<PagingData<GameData>> =
-        MutableLiveData()
-    val popularGamesResponse: LiveData<PagingData<GameData>> get() = _popularGamesResponse
+//
+//    private var _popularGamesResponse: LiveData<PagingData<GameData>> =
+//        MutableLiveData()
+//    val popularGamesResponse: LiveData<PagingData<GameData>> get() = _popularGamesResponse
 
     private val currentQuery = MutableLiveData(
         QueryModel(
@@ -62,13 +60,13 @@ class SearchViewModel @Inject constructor(
         genres: String?,
         searchQuery: String?
     ) {
-        currentQuery.value = QueryModel(platformsId, ordering, genres, searchQuery)
+        currentQuery.value = QueryModel(platformsId, "-$ordering", genres, searchQuery)
     }
 
     companion object {
         const val DEFAULT_QUERY = "ajkhsdkasdkjasd"
         val DEFAULT_PLATFORM_IDS = null
-        const val DEFAULT_ORDERING = "name"
+        const val DEFAULT_ORDERING = "-added"
         val DEFAULT_GENRES = null
 
     }

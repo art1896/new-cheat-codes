@@ -32,14 +32,20 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             xboxCard.setOnClickListener { navigateToXbox() }
             searchCard.setOnClickListener { navigateToSearch() }
             popularCard.setOnClickListener { navigateToPopular() }
+            favCard.setOnClickListener { navigateToFavorites() }
             exitCard.setOnClickListener {
                 requireActivity().finish()
             }
         }
     }
 
+    private fun navigateToFavorites() {
+        val action = HomeFragmentDirections.actionHomeFragmentToFavoritesFragment()
+        findNavController().navigate(action)
+    }
+
     private fun navigateToSearch() {
-        val action = HomeFragmentDirections.actionHomeFragmentToSearchFragment()
+        val action = HomeFragmentDirections.actionHomeFragmentToSearchFragment(0, null)
         findNavController().navigate(action)
     }
 

@@ -1,13 +1,13 @@
 package com.cheatart.newcheatcodes.ui.search
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.animation.AnimationUtils
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.transition.AutoTransition
@@ -17,7 +17,9 @@ import com.cheatart.newcheatcodes.adapter.GameAdapter
 import com.cheatart.newcheatcodes.adapter.GameLoadStateAdapter
 import com.cheatart.newcheatcodes.databinding.FragmentSearchBinding
 import com.cheatart.newcheatcodes.model.GameData
-import com.cheatart.newcheatcodes.utils.hideKeyboard
+import com.cheatart.newcheatcodes.model.Genre
+import com.cheatart.newcheatcodes.model.Platforms
+import com.cheatart.newcheatcodes.other.hideKeyboard
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipDrawable
 import dagger.hilt.android.AndroidEntryPoint
@@ -30,6 +32,7 @@ class SearchFragment : Fragment(R.layout.fragment_search),
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
     private val viewModel by viewModels<SearchViewModel>()
+    private val args by navArgs<SearchFragmentArgs>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -80,6 +83,7 @@ class SearchFragment : Fragment(R.layout.fragment_search),
             )
 
 
+
             if (binding.chipsLayout.visibility == View.VISIBLE) {
                 binding.chipsLayout.visibility = View.GONE
                 TransitionManager.beginDelayedTransition(binding.parentLayout, AutoTransition())
@@ -88,6 +92,27 @@ class SearchFragment : Fragment(R.layout.fragment_search),
                         requireContext(),
                         R.anim.rotate_from_90
                     )
+                )
+            }
+        }
+
+        when (args.searchQuery) {
+            "genre" -> {
+                binding.genresChipGroup.check(args.id)
+                viewModel.getGames(
+                    platformsId = null,
+                    ordering = "-added",
+                    genres = args.id.toString(),
+                    searchQuery = null
+                )
+            }
+            "platform" -> {
+                binding.platformsChipGroup.check(args.id)
+                viewModel.getGames(
+                    platformsId = args.id.toString(),
+                    ordering = "-added",
+                    genres = null,
+                    searchQuery = null
                 )
             }
         }
@@ -164,7 +189,7 @@ class SearchFragment : Fragment(R.layout.fragment_search),
         binding.orderByChipGroup.addView(chip as View)
     }
 
-    private fun addPlatformChipToGroup(platform: GameData.Platforms) {
+    private fun addPlatformChipToGroup(platform: Platforms) {
         val chip = Chip(requireContext())
         val drawable =
             ChipDrawable.createFromAttributes(requireContext(), null, 0, R.style.CustomChipStyle)
@@ -173,10 +198,13 @@ class SearchFragment : Fragment(R.layout.fragment_search),
         chip.text = platform.name
         chip.id = platform.id!!
         chip.isCheckable = true
+        if (args.searchQuery.equals("platform")) {
+            chip.isChecked = platform.id == args.id
+        }
         binding.platformsChipGroup.addView(chip as View)
     }
 
-    private fun addGenreChipToGroup(genre: GameData.Genre) {
+    private fun addGenreChipToGroup(genre: Genre) {
         val chip = Chip(requireContext())
         val drawable =
             ChipDrawable.createFromAttributes(requireContext(), null, 0, R.style.CustomChipStyle)
@@ -185,6 +213,9 @@ class SearchFragment : Fragment(R.layout.fragment_search),
         chip.text = genre.name
         chip.id = genre.id!!
         chip.isCheckable = true
+        if (args.searchQuery.equals("genre")) {
+            chip.isChecked = genre.id == args.id
+        }
         binding.genresChipGroup.addView(chip as View)
     }
 
@@ -197,7 +228,7 @@ class SearchFragment : Fragment(R.layout.fragment_search),
 
     override fun onItemClick(game: GameData) {
         val action = SearchFragmentDirections.actionSearchFragmentToPopularGameDetailsFragment(
-            game,
+            game.id!!,
             game.name!!
         )
         findNavController().navigate(action)

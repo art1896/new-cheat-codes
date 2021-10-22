@@ -1,5 +1,6 @@
 package com.cheatart.newcheatcodes.ui.ps
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -16,7 +17,7 @@ import com.cheatart.newcheatcodes.data.network.Resource
 import com.cheatart.newcheatcodes.databinding.FragmentPsBinding
 import com.cheatart.newcheatcodes.model.CheatModel
 import com.cheatart.newcheatcodes.ui.CheatViewModel
-import com.cheatart.newcheatcodes.utils.WrapContentLinearLayoutManager
+import com.cheatart.newcheatcodes.other.WrapContentLinearLayoutManager
 import com.google.firebase.database.GenericTypeIndicator
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -51,8 +52,8 @@ class PsFragment : Fragment(R.layout.fragment_ps), CheatsAdapter.OnItemClickList
                             object : GenericTypeIndicator<List<CheatModel>>() {}
                         cheatsList = dataSnapshot.getValue(t) as MutableList<CheatModel>
                         cheatsAdapter.setData(cheatsList)
-                        binding.shimmerViewContainer.stopShimmer()
-                        binding.shimmerViewContainer.isVisible = false
+                        binding?.shimmerViewContainer.stopShimmer()
+                        binding?.shimmerViewContainer.isVisible = false
                     }
                 }
                 is Resource.Loading -> {
@@ -82,19 +83,18 @@ class PsFragment : Fragment(R.layout.fragment_ps), CheatsAdapter.OnItemClickList
         })
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_sort_by_name -> {
-                val sortedList =
-                    cheatsList.sortedBy { cheatModel -> cheatModel.name } as MutableList
-                cheatsAdapter.setData(sortedList)
+               cheatsList.sortBy { it.name }
+                cheatsAdapter.notifyDataSetChanged()
                 binding.recyclerView.smoothScrollToPosition(0)
                 true
             }
             R.id.action_sort_by_date_created -> {
-                val sortedList =
-                    cheatsList.sortedByDescending { cheatModel -> cheatModel.codes.size } as MutableList
-                cheatsAdapter.setData(sortedList)
+                cheatsList.sortByDescending { it.codes.size }
+                cheatsAdapter.notifyDataSetChanged()
                 binding.recyclerView.smoothScrollToPosition(0)
                 true
             }

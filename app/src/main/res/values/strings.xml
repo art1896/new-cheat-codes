@@ -13,7 +13,7 @@
     <string name="store_itch">itch.io</string>
 
     <string name="pc">PC</string>
-    <string name="macos">macOS</string>
+    <string name="macos">Apple</string>
     <string name="playstation">PlayStation</string>
     <string name="android">Android</string>
     <string name="linux">Linux</string>
@@ -37,4 +37,6 @@
         <item>Rating</item>
         <item>Metacritic</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

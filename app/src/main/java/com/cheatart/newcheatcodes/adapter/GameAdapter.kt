@@ -2,10 +2,13 @@ package com.cheatart.newcheatcodes.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.cheatart.newcheatcodes.R
 import com.cheatart.newcheatcodes.databinding.ItemAdsBinding
 import com.cheatart.newcheatcodes.databinding.ListItemBinding
 import com.cheatart.newcheatcodes.model.GameData
@@ -130,6 +133,44 @@ class GameAdapter(
             binding.apply {
                 Picasso.get().load(game.background_image).fit().centerCrop().into(posterImage)
                 gameName.text = game.name
+                setPlatforms(game, this)
+                this.detailsCountFrame.isVisible = false
+                game.metacritic?.let {
+                    this.detailsMetascore.text = it.toString()
+                    this.detailsCountFrame.isVisible = true
+                }
+            }
+        }
+
+        private fun setPlatforms(game: GameData, binding: ListItemBinding) {
+            binding.detailsWindowsPlatformImage.visibility = View.GONE
+            binding.detailsPsPlatformImage.visibility = View.GONE
+            binding.detailsXboxPlatformImage.visibility = View.GONE
+            binding.detailsAndroidPlatformImage.visibility = View.GONE
+            binding.detailsIosPlatformImage.visibility = View.GONE
+            binding.detailsLinuxPlatformImage.visibility = View.GONE
+
+            game.parentPlatforms?.forEach {
+                when (it.platform?.name) {
+                    context.getString(R.string.pc) -> {
+                        binding.detailsWindowsPlatformImage.visibility = View.VISIBLE
+                    }
+                    context.getString(R.string.playstation) -> {
+                        binding.detailsPsPlatformImage.visibility = View.VISIBLE
+                    }
+                    context.getString(R.string.xbox) -> {
+                        binding.detailsXboxPlatformImage.visibility = View.VISIBLE
+                    }
+                    context.getString(R.string.android) -> {
+                        binding.detailsAndroidPlatformImage.visibility = View.VISIBLE
+                    }
+                    context.getString(R.string.macos) -> {
+                        binding.detailsIosPlatformImage.visibility = View.VISIBLE
+                    }
+                    context.getString(R.string.linux) -> {
+                        binding.detailsLinuxPlatformImage.visibility = View.VISIBLE
+                    }
+                }
             }
         }
     }

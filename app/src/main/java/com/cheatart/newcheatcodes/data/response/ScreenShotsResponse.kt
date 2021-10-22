@@ -1,8 +1,8 @@
 package com.cheatart.newcheatcodes.data.response
 
-import com.cheatart.newcheatcodes.model.GameData
+import com.cheatart.newcheatcodes.model.ScreenShot
 
 
 data class ScreenShotsResponse(
-    val results: List<GameData.ScreenShot>
+    val results: List<ScreenShot>
 )

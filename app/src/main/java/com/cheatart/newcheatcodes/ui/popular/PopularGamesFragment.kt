@@ -69,7 +69,7 @@ class PopularGamesFragment : Fragment(R.layout.fragment_popular_games),
     override fun onItemClick(game: GameData) {
         val action =
             PopularGamesFragmentDirections.actionPopularGamesFragmentToPopularGameDetailsFragment(
-                game,
+                game.id!!,
                 game.name!!
             )
         findNavController().navigate(action)

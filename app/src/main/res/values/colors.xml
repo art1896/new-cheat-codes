@@ -27,9 +27,14 @@
     <color name="transfer_red">#F91745</color>
     <color name="transfer_green">#2FC853</color>
     <color name="transfer_blue">#FF00B2FF</color>
-    <color name="bg_blue">#20303E</color>
+    <color name="bg_black">#151515</color>
     <color name="bg_blue_dark">#182532</color>
     <color name="background">#dddddd</color>
+
+    <color name="exceptional_color">#7ABE39</color>
+    <color name="recommended_color">#4F6DD2</color>
+    <color name="meh_color">#F9A641</color>
+    <color name="skip_color">#F83B4A</color>
 
 
 </resources>

@@ -1,7 +1,7 @@
 package com.cheatart.newcheatcodes.data.response
 
-import com.cheatart.newcheatcodes.model.GameData
+import com.cheatart.newcheatcodes.model.Genre
 
 data class GenresResponse(
-    val results: List<GameData.Genre>
+    val results: List<Genre>
 )

@@ -1,4 +1,4 @@
-package com.cheatart.newcheatcodes.utils
+package com.cheatart.newcheatcodes.other
 
 import android.content.Context
 import androidx.recyclerview.widget.LinearLayoutManager

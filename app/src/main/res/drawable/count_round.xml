@@ -5,12 +5,12 @@
     <gradient
         android:angle="135"
         android:centerColor="@color/bg_blue_dark"
-        android:endColor="@color/bg_blue"
+        android:endColor="@color/bg_black"
         android:startColor="@color/bg_blue_dark"
         android:type="linear" />
 
     <corners
-        android:radius="10dp"/>
+        android:radius="4dp"/>
 
     <stroke
         android:color="@color/transfer_green"

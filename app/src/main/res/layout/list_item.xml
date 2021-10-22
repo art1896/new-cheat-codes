@@ -3,43 +3,160 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/colorTransparent">
 
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardviewfav"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        app:cardCornerRadius="30dp"
-        app:cardElevation="0dp">
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#2C2C2C"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="15dp"
+        app:contentPaddingBottom="10dp"
+        app:cardElevation="2dp">
 
-        <ImageView
-            android:id="@+id/poster_image"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            android:transitionName="poster_transition" />
-
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="#7F000000" />
-
-        <TextView
-            android:id="@+id/game_name"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:transitionName="name_transition" />
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/poster_image"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                tools:background="@color/black"
+                android:scaleType="fitXY"
+                android:transitionName="poster_transition" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/details_windows_platform_image"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:src="@drawable/ic_windows"
+                        android:transitionName="platform_transition"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/details_ps_platform_image"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:src="@drawable/ic_playstation"
+                        android:transitionName="platform_transition"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/details_xbox_platform_image"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_xbox"
+                        android:transitionName="platform_transition"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/details_android_platform_image"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:src="@drawable/ic_android"
+                        android:transitionName="platform_transition"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/details_ios_platform_image"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:src="@drawable/ic_ios"
+                        android:transitionName="platform_transition"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/details_linux_platform_image"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_linux"
+                        android:transitionName="platform_transition"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/details_count_frame"
+                    android:layout_width="40dp"
+                    android:layout_height="25dp"
+                    android:visibility="gone"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="5dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/count_round"
+                    android:transitionName="count_transition">
+
+                    <TextView
+                        android:id="@+id/details_metascore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="0"
+                        android:textColor="#6DC849" />
+
+                </FrameLayout>
+
+
+            </RelativeLayout>
+
+
+
+            <TextView
+                android:id="@+id/game_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layout_marginStart="10dp"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                tools:text="kahsbdkjhasbdkhb kuasgdhjasbd"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:transitionName="name_transition" />
+
+        </LinearLayout>
+
+
 
     </androidx.cardview.widget.CardView>
 

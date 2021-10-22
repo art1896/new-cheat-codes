@@ -1,6 +1,7 @@
 package com.cheatart.newcheatcodes.data.api
 
 import com.cheatart.newcheatcodes.data.response.*
+import com.cheatart.newcheatcodes.model.GameData
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -18,6 +19,12 @@ interface RawgApi {
         @Query("page") page: Int,
         @Query("page_size") pageSize: Int
     ): PopularGamesResponse
+
+    @GET("games/{id}")
+    suspend fun getGameDataById(
+        @Path("id") id: Int,
+        @Query("key") key: String = "c542e67aec3a4340908f9de9e86038af"
+    ): GameData
 
 
     @GET("games")

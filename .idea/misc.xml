@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/add_to_favorites_bg.xml" value="0.24351851851851852" />
+        <entry key="app/src/main/res/drawable/count_round.xml" value="0.24351851851851852" />
+        <entry key="app/src/main/res/drawable/custom_round.xml" value="0.24074074074074073" />
+        <entry key="app/src/main/res/drawable/fav_toggle_bg.xml" value="0.24351851851851852" />
+        <entry key="app/src/main/res/drawable/ic_android.xml" value="0.24351851851851852" />
+        <entry key="app/src/main/res/drawable/ic_baseline_circle_24.xml" value="0.24074074074074073" />
+        <entry key="app/src/main/res/drawable/ic_baseline_exit_to_app_24.xml" value="0.24351851851851852" />
+        <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.24351851851851852" />
+        <entry key="app/src/main/res/drawable/ic_ios.xml" value="0.24351851851851852" />
+        <entry key="app/src/main/res/drawable/ic_linux.xml" value="0.24351851851851852" />
+        <entry key="app/src/main/res/drawable/ic_pc.xml" value="0.24351851851851852" />
+        <entry key="app/src/main/res/drawable/ic_playstation.xml" value="0.24351851851851852" />
+        <entry key="app/src/main/res/drawable/ic_playstation_bbottom.xml" value="0.24351851851851852" />
+        <entry key="app/src/main/res/drawable/ic_ps.xml" value="0.24351851851851852" />
+        <entry key="app/src/main/res/drawable/ic_round_favorite_24.xml" value="0.24351851851851852" />
+        <entry key="app/src/main/res/drawable/ic_round_favorite_border_24.xml" value="0.24351851851851852" />
+        <entry key="app/src/main/res/drawable/ic_round_ios_share_24.xml" value="0.24351851851851852" />
+        <entry key="app/src/main/res/drawable/ic_round_volume_off_24.xml" value="0.23703703703703705" />
+        <entry key="app/src/main/res/drawable/ic_round_volume_up_24.xml" value="0.23703703703703705" />
+        <entry key="app/src/main/res/drawable/ic_store_app_store.xml" value="0.24351851851851852" />
+        <entry key="app/src/main/res/drawable/ic_store_epic_games.xml" value="0.24351851851851852" />
+        <entry key="app/src/main/res/drawable/ic_store_google_play.xml" value="0.24351851851851852" />
+        <entry key="app/src/main/res/drawable/ic_store_xbox.xml" value="0.24351851851851852" />
+        <entry key="app/src/main/res/drawable/ic_windows.xml" value="0.24351851851851852" />
+        <entry key="app/src/main/res/drawable/ic_xbox.xml" value="0.24351851851851852" />
+        <entry key="app/src/main/res/drawable/layer_seekbar.xml" value="0.24074074074074073" />
+        <entry key="app/src/main/res/drawable/remove_from_favorites_bg.xml" value="0.24351851851851852" />
+        <entry key="app/src/main/res/drawable/store_round_bg.xml" value="0.24351851851851852" />
+        <entry key="app/src/main/res/drawable/toggle_off.xml" value="0.23703703703703705" />
+        <entry key="app/src/main/res/drawable/toggle_on.xml" value="0.23703703703703705" />
+        <entry key="app/src/main/res/drawable/toggle_selector.xml" value="0.23703703703703705" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.19814814814814816" />
+        <entry key="app/src/main/res/layout/cheat_item.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/clip_item.xml" value="0.246875" />
+        <entry key="app/src/main/res/layout/favorite_toggle.xml" value="0.246875" />
+        <entry key="app/src/main/res/layout/fragment_favorites.xml" value="0.246875" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.19537037037037036" />
+        <entry key="app/src/main/res/layout/fragment_pc.xml" value="0.18888888888888888" />
+        <entry key="app/src/main/res/layout/fragment_popular_game_details.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_popular_games.xml" value="0.20462962962962963" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.20277777777777778" />
+        <entry key="app/src/main/res/layout/image_dialog.xml" value="0.1962962962962963" />
+        <entry key="app/src/main/res/layout/layout_loading_screen.xml" value="0.246875" />
+        <entry key="app/src/main/res/layout/list_item.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/popular_game_data_placeholder_layout.xml" value="0.20462962962962963" />
+        <entry key="app/src/main/res/layout/rating_item.xml" value="0.246875" />
+        <entry key="app/src/main/res/layout/slide_item.xml" value="0.20277777777777778" />
+        <entry key="app/src/main/res/layout/slide_item_details.xml" value="0.20277777777777778" />
+        <entry key="app/src/main/res/layout/store_item.xml" value="0.20277777777777778" />
+        <entry key="app/src/main/res/layout/video_item.xml" value="0.246875" />
+        <entry key="app/src/main/res/menu/game_details_menu.xml" value="0.246875" />
+        <entry key="app/src/main/res/menu/menu.xml" value="0.19537037037037036" />
+        <entry key="app/src/main/res/menu/search_menu.xml" value="0.19537037037037036" />
+        <entry key="app/src/main/res/xml/provider_path.xml" value="0.246875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
+  </component>
+</project>

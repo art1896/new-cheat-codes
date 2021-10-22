@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_blue"
+    android:background="@color/bg_black"
     tools:context=".ui.popular.PopularGamesFragment">
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
+        tools:visibility="visible"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/list_item" />
@@ -22,34 +23,43 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="vertical"
+        tools:visibility="gone"
         android:visibility="gone"
         app:shimmer_duration="1000">
 
-        <LinearLayout
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
-            <include layout="@layout/popular_game_data_placeholder_layout" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-            <include layout="@layout/popular_game_data_placeholder_layout" />
+                <include layout="@layout/popular_game_data_placeholder_layout" />
 
-            <include layout="@layout/popular_game_data_placeholder_layout" />
+                <include layout="@layout/popular_game_data_placeholder_layout" />
 
-            <include layout="@layout/popular_game_data_placeholder_layout" />
+                <include layout="@layout/popular_game_data_placeholder_layout" />
 
-            <include layout="@layout/popular_game_data_placeholder_layout" />
+                <include layout="@layout/popular_game_data_placeholder_layout" />
 
-            <include layout="@layout/popular_game_data_placeholder_layout" />
+                <include layout="@layout/popular_game_data_placeholder_layout" />
 
-            <include layout="@layout/popular_game_data_placeholder_layout" />
+                <include layout="@layout/popular_game_data_placeholder_layout" />
 
-            <include layout="@layout/popular_game_data_placeholder_layout" />
+                <include layout="@layout/popular_game_data_placeholder_layout" />
 
-            <include layout="@layout/popular_game_data_placeholder_layout" />
+                <include layout="@layout/popular_game_data_placeholder_layout" />
 
-            <include layout="@layout/popular_game_data_placeholder_layout" />
-        </LinearLayout>
+                <include layout="@layout/popular_game_data_placeholder_layout" />
+
+                <include layout="@layout/popular_game_data_placeholder_layout" />
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
 
     </com.facebook.shimmer.ShimmerFrameLayout>
 
@@ -63,7 +73,7 @@
         android:text="Result could not be loaded"
         android:textColor="@color/white"
         android:visibility="gone"
-        tools:visibility="visible" />
+        tools:visibility="gone" />
 
     <Button
         android:id="@+id/button_retry"
@@ -74,6 +84,6 @@
         android:text="retry"
         android:textColor="@color/white"
         android:visibility="gone"
-        tools:visibility="visible" />
+        tools:visibility="gone" />
 
 </RelativeLayout>
