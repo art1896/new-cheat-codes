@@ -155,7 +155,7 @@
     <fragment
         android:id="@+id/favoritesFragment"
         android:name="com.cheatart.newcheatcodes.ui.favorites.FavoritesFragment"
-        android:label="fragment_favorites"
+        android:label="Favorites"
         tools:layout="@layout/fragment_favorites" >
         <action
             android:id="@+id/action_favoritesFragment_to_popularGameDetailsFragment"

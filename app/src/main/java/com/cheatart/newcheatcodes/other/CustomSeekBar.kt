@@ -29,7 +29,6 @@ class CustomSeekBar : androidx.appcompat.widget.AppCompatSeekBar {
         widthMeasureSpec: Int,
         heightMeasureSpec: Int
     ) {
-        // TODO Auto-generated method stub
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
     }
 
