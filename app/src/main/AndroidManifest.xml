@@ -14,6 +14,7 @@
         android:theme="@style/Theme.CheatCodes">
         <activity
             android:name=".SplashActivity"
+            android:exported="true"
             android:theme="@style/Theme.CheatCodes.No.Action.Bar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,9 +27,9 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-1278927663267942~2212710467" />
 
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
